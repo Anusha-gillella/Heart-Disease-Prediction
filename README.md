@@ -1,6 +1,6 @@
 # Heart-Disease-Prediction
 
-This dataset contains information about contains diagnoses of heart disease patients
+This dataset contains information about diagnoses of heart disease patients
 
 📌 Objectives:
 Perform dataset exploration using various type of visualizations.
