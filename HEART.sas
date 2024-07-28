@@ -255,12 +255,23 @@ PROC DATASETS LIBRARY=WORK MEMTYPE=DATA;
 
 ODS HTML CLOSE;
 ODS PDF CLOSE;
+ODS RTF CLOSE;
 	
 	ODS PDF 
-		FILE='/home/u63665225/Project/Heart_Disease_Prediction_Report.pdf';
+		FILE ='/home/u63665225/Project/Heart_Disease_Prediction_Report.pdf';
+	ODS RTF 
+		FILE = '/home/u63665225/Project/Heart_Disease_Prediction_Report.rtf';
+		
 	OPTIONS NOBYLINE NODATE;
-	OPTIONS ORIENTATION = REVERSELANDSCAPELANDSCAPE;
+	OPTIONS ORIENTATION = REVERSELANDSCAPE;
 	TITLE 'Heart Disaease Prediction';
+	
+	PROC PRINT DATA=WORK.Test1 (OBS=10);
+    VAR _ALL_;
+RUN;
+
+ODS PDF CLOSE;
+ODS RTF CLOSE;
 
 PROC REPORT DATA=WORK.TEST_PREDICTIONS NOWINDOWS;
 	FOOTNOTE '---- End of Report // Report by @Anusha ----';
